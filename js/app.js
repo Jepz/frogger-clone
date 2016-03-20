@@ -1,4 +1,3 @@
-
 var Enemy = function() {
 	/**
 	* Added the different atributes for Enemy.
@@ -61,12 +60,13 @@ Enemy.prototype.randomSpeed = function() {
 	
 };
 
-//creting the Player object
+//creting the 
 var Player = function() {
 	/*
 	* Creating the Player moment, first is X and second is Y.
 	* Adding a reset function to place the Palyer at the start position. 
 	*/
+
 	this.movement = [[-2, 402],[-20, 380]];
     this.sprite = 'images/char-boy.png';
     this.reset();
@@ -79,23 +79,28 @@ Player.prototype.update = function() {
     this.positionChecker();
 };
 
-Player.prototype.positionChecker = function() {
+Player.prototype.positionChecker = function(enemy) {
+	// creatinng local variables
+	var protagonist = this; //Player
+	var antagosnist = enemy; //Enemy
+	
 	/*
 	* First is to simply check if the users is at the water.
 	*/
-    if (player.y === -20) {
-        player.reset();
+    if (protagonist.y === -20) {
+        protagonist.reset();
 		
 		/*
 		* Checking if an Enemy is at the Player's position, if it is then use the rest()
 		*/
-    } else if (this.y >= 60 && this.y <= 220) {
-        allEnemies.forEach(function(enemy) {
+    } else if (protagonist.y >= 60 && protagonist.y <= 220) {
+		
+		
+        allEnemies.forEach(function(antagosnist) {
 			//If Enemy and Player is at the same Y position
-            if (enemy.y === player.y) {
-				//the 40 + 40 is to 
-                if (enemy.x >= player.x - 40 && enemy.x <= player.x + 40) {
-                    player.reset();
+            if (antagosnist.y === protagonist.y) {
+                if (antagosnist.x >= protagonist.x - 40 && antagosnist.x <= protagonist.x + 40) {
+                    protagonist.reset();
                 }
             }
         });
