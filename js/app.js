@@ -96,7 +96,7 @@ Player.prototype.positionChecker = function(enemy) {
     } else if (protagonist.y >= 60 && protagonist.y <= 220) {
 		
 		
-        allEnemies.forEach(function(antagosnist) {
+        allEnemies.forEach(function(antagonist) {
 			//If Enemy and Player is at the same Y position
             if (antagonist.y === protagonist.y) {
                 if (antagonist.x >= protagonist.x - 40 && antagonist.x <= protagonist.x + 40) {
