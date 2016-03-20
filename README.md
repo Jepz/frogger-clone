@@ -7,11 +7,11 @@ All you need to do is download the and run it by opening the index.html.
 
 ### Let's get playing!
 It's simple, use the keyboards arrowkeys to move your character up,down,left,right.
-If you get hit by any bugs or get to teh othersie, the game restarts.
+If you get hit by any bugs or get to the otherside, the game restarts.
 
 Enjoy!
 
 
 
 ### Version
-1.0.1
+1.0.2

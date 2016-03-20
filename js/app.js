@@ -28,7 +28,7 @@ Enemy.prototype.update = function(dt) {
 	    this.x += this.speed * dt;
     if (this.x > this.movement[1]) {
         this.reset();
-    };
+    }
 };
 /*
 * Drawing the Enemy
@@ -82,7 +82,7 @@ Player.prototype.update = function() {
 Player.prototype.positionChecker = function(enemy) {
 	// creatinng local variables
 	var protagonist = this; //Player
-	var antagosnist = enemy; //Enemy
+	var antagonist = enemy; //Enemy
 	
 	/*
 	* First is to simply check if the users is at the water.
@@ -98,8 +98,8 @@ Player.prototype.positionChecker = function(enemy) {
 		
         allEnemies.forEach(function(antagosnist) {
 			//If Enemy and Player is at the same Y position
-            if (antagosnist.y === protagonist.y) {
-                if (antagosnist.x >= protagonist.x - 40 && antagosnist.x <= protagonist.x + 40) {
+            if (antagonist.y === protagonist.y) {
+                if (antagonist.x >= protagonist.x - 40 && antagonist.x <= protagonist.x + 40) {
                     protagonist.reset();
                 }
             }
@@ -133,24 +133,24 @@ Player.prototype.handleInput = function(input) {
 	case "left":
 		if (this.x - xPos >= this.movement[0][0]){ 
 			this.x -= xPos;
-		};
+		}
 	  break;
 	case "right":
 		if (this.x + xPos <= this.movement[0][1]) {
 			this.x += xPos;
-		};
+		}
 	  break; 
   	case "up":
 		if (this.y - yPos <= this.movement[1][1]) {
 			this.y -= yPos;
-		};
+		}
 		
 	   break;
   	case "down":
 		if (this.y + yPos <= this.movement[1][1]) {
 			this.y += yPos;
-		};
-	};
+		}
+	}
 };
 
 document.addEventListener('keyup', function(e) {
